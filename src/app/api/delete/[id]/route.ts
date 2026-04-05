@@ -3,14 +3,10 @@ import { NextResponse } from "next/server";
 
 export async function DELETE(
   req: Request,
-  context: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const {id} = await context.params;
-
-    console.log("id is", id);
-    console.log("params:", context.params);
-console.log("id:", context.params.id);
+    const { id } = await params; 
 
     await prisma.todo.delete({
       where: { id },

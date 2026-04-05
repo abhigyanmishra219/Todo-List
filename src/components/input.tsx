@@ -8,7 +8,7 @@ export default function Input({ onAdd }: { onAdd: (todo: any) => void })
     async function handleSave()
     {
         try{
-            const response=await fetch("http://localhost:3000/api/addtodo",{
+            const response=await fetch("/api/addtodo",{
                 method:"POST",
                 body:JSON.stringify({title:text})
             })
@@ -22,7 +22,7 @@ export default function Input({ onAdd }: { onAdd: (todo: any) => void })
         }
         catch(error:unknown)
         {
-          alert("Error");
+          alert("Error is adding");
         }
     }
     return(
