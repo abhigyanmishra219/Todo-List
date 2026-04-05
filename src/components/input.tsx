@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 
-export default function Input({ onAdd }: { onAdd: (todo: any) => void })
+export default function Input()
 {
     const [text, setText] = useState("");
     async function handleSave()
